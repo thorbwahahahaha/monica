@@ -261,5 +261,6 @@
 		}
 		
 	}
-	
-?>
+
+/* End of case_report.php */
+/* Location: ./application/models/case_report.php */

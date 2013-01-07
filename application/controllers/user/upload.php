@@ -3,8 +3,6 @@ class Upload extends CI_Controller
 {
 	public function index()
 	{
-		$this->load->helper(array('form', 'url'));
-				
 		$data['base'] = $this->config->item('base_url');
 		$data['css'] = $this->config->item('css');
 		$data['title'] = 'View patients';
@@ -23,9 +21,8 @@ class Upload extends CI_Controller
 	{
 		$config['upload_path'] = './uploads/';
 		$config['allowed_types'] = 'mdb';
-		 $config['max_size'] = '0';
+		$config['max_size'] = '0';
 		$this->load->library('upload' ,$config);
-		$this->load->library('session');
 		if ( ! $this->upload->do_upload())
 		{
 			$error = $this->upload->display_errors();
@@ -180,7 +177,6 @@ class Upload extends CI_Controller
 				);
 			}
 			
-			$this->load->helper(array('form', 'url'));
 			$data['table'] = $values;
 			$data['script'] = '';
 			$this->load->view('templates/header',$data);
@@ -191,9 +187,7 @@ class Upload extends CI_Controller
 			}
 	}
 	function confirmUpload()
-	{	
-		$this->load->library('session');
-	
+	{		
 		if($this->input->post('TPsubmit') == 'Confirm Upload')
 		{
 		$this->load->model('Case_report');
@@ -353,13 +347,11 @@ class Upload extends CI_Controller
 		}
 		else if ($this->input->post('TPsubmit') == 'Cancel')
 		{
-		$this->load->helper(array('form', 'url'));
-		
-		
-		$this->session->unset_userdata('TPuploadvalues');
-		 redirect('/upload/', 'refresh');
+			$this->session->unset_userdata('TPuploadvalues');
+		 	redirect('/upload/', 'refresh');
 		}
 	}
-	}
+}
 		
-		
+/* End of file user/upload.php */
+/* Location: ./application/controllers/user/upload.php */

@@ -3,10 +3,6 @@ class Mapform extends CI_Controller
 {
 	public function index()
 	{
-		$this->load->helper(array('form', 'url'));
-		
-		$this->load->library('form_validation');
-		
 		$this->load->model('Mapping');
 		
 		/* css */
@@ -33,18 +29,12 @@ class Mapform extends CI_Controller
 	function mapByType()
 	{	
 		$this->load->model('Mapping');
-		
-		$this->load->library('form_validation');
-
-		$this->load->helper(array('form', 'url'));
-		
 		$data['node_type'] = $this->input->post('NDtype-ddl');
 		
 		/* css */
 		$data['base'] = $this->config->item('base_url');
 		$data['css'] = $this->config->item('css');
 		$data['title'] = 'View map';
-		
 		
 		//scripts if none keep '' 
 		$data['script'] = 'view_casereport';
@@ -95,11 +85,6 @@ class Mapform extends CI_Controller
 	function mapPolygons()
 	{	
 		$this->load->model('Mapping');
-		
-		$this->load->library('form_validation');
-
-		$this->load->helper(array('form', 'url'));
-		
 		$data['polygon_name'] = $this->input->post('NDtype-ddl');
 		
 		/* css */
@@ -135,11 +120,6 @@ class Mapform extends CI_Controller
 	function mapAllPolygons()
 	{	
 		$this->load->model('Mapping');
-		
-		$this->load->library('form_validation');
-
-		$this->load->helper(array('form', 'url'));
-		
 		/* css */
 		$data['base'] = $this->config->item('base_url');
 		$data['css'] = $this->config->item('css');
@@ -172,25 +152,16 @@ class Mapform extends CI_Controller
 	
 	function getNodeInfo($data)
 	{	
-		$this->load->model('Mapping');
-		
-		$this->load->library('form_validation');
-
-		$this->load->helper(array('form', 'url'));
-		
+		$this->load->model('Mapping');		
 		return $this->Mapping->getNodeInfo($data);
 	}
 	
 	function addNodeCluster($data)
 	{	
 		$this->load->model('Mapping');
-		
-		$this->load->library('form_validation');
-
-		$this->load->helper(array('form', 'url'));
-		
 		return $this->Mapping->addNodeCluster($data);
 	}
-	
-	//*/
 }
+
+/* End of file user/mapform.php */
+/* Location: ./application/controllers/user/mapform.php */

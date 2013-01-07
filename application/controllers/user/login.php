@@ -3,10 +3,6 @@ class Login extends CI_Controller
 {
 	public function index()
 	{
-		$this->load->helper(array('form', 'url'));
-		
-		$this->load->library('form_validation');
-		
 		/* css */
 		$data['base'] = $this->config->item('base_url');
 		$data['css'] = $this->config->item('css');
@@ -27,11 +23,7 @@ class Login extends CI_Controller
 		}
 	}
 	function check()
-	{		
-		$this->load->helper(array('form', 'url'));
-		
-		$this->load->library('form_validation');
-		$this->load->library('session');
+	{
 		/* css */
 		$data['base'] = $this->config->item('base_url');
 		$data['css'] = $this->config->item('css');
@@ -92,11 +84,7 @@ class Login extends CI_Controller
 	}
 	
 	function add_user()
-	{	
-		$this->load->helper(array('form', 'url'));
-		
-		$this->load->library('form_validation');
-		
+	{			
 		/* css */
 		$data['base'] = $this->config->item('base_url');
 		$data['css'] = $this->config->item('css');
@@ -135,9 +123,11 @@ class Login extends CI_Controller
 		}
 	}
 	function logout()
-	{	$this->load->helper(array('form', 'url'));
-		$this->load->library('session');
+	{
 		$this->session->sess_destroy();
 		redirect('/login/', 'refresh');
 	}
 }
+
+/* End of file user/login.php */
+/* Location: ./application/controllers/user/login.php */

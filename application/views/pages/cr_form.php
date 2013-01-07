@@ -106,8 +106,8 @@ echo form_dropdown('TPsex-dd', $options, 'male',$js);
 <h5>Outcome</h5>
 <label style="color:red"><?php echo form_error('TPoutcome-rd'); ?></label>
 <input type="radio" name="TPoutcome-rd" value="A" <?php echo set_radio('myradio', 'A', TRUE); ?> /> Alive <br/>
-<input type="radio" name="TPoutcome-rd" value="D" <?php echo set_radio('myradio', 'D'); ?> /> Died </br>
-<input type="radio" name="TPoutcome-rd" value="U" <?php echo set_radio('myradio', 'U'); ?> /> Unknown </br>
+<input type="radio" name="TPoutcome-rd" value="D" <?php echo set_radio('myradio', 'D'); ?> /> Died <br/>
+<input type="radio" name="TPoutcome-rd" value="U" <?php echo set_radio('myradio', 'U'); ?> /> Unknown <br/>
 
 <div><input type="submit" value="Submit" /></div>
 

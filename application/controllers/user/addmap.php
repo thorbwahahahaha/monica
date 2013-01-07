@@ -2,11 +2,7 @@
 class Addmap extends CI_Controller
 {
 	public function index()
-	{
-		$this->load->helper(array('form', 'url'));
-		
-		$this->load->library('form_validation');
-		
+	{		
 		$this->load->model('Mapping');
 		
 		/* css */
@@ -29,12 +25,8 @@ class Addmap extends CI_Controller
 			$this->load->view('pages/success');
 		}
 	}
-function addPolygon()
-	{	
-		$this->load->helper(array('form', 'url'));
-		
-		$this->load->library('form_validation');
-		
+	function addPolygon()
+	{
 		$this->load->model('Mapping');
 		
 		/* css */
@@ -75,3 +67,6 @@ function addPolygon()
 		//*/
 	}
 }
+
+/* End of file user/addmap.php */
+/* Location: ./application/controllers/user/addmap.php */

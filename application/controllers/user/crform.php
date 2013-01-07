@@ -3,9 +3,6 @@ class Crform extends CI_Controller
 {
 	public function index()
 	{	$this->redirectLogin();
-		$this->load->helper(array('form', 'url'));
-		
-		$this->load->library('form_validation');
 		
 		/* css */
 		$data['base'] = $this->config->item('base_url');
@@ -39,11 +36,7 @@ class Crform extends CI_Controller
 		}
 	}
 	function addcase()
-	{	
-		$this->load->helper(array('form', 'url'));
-		
-		$this->load->library('form_validation');
-		
+	{		
 		/* css */
 		$data['base'] = $this->config->item('base_url');
 		$data['css'] = $this->config->item('css');
@@ -116,9 +109,6 @@ class Crform extends CI_Controller
 	}
 	function viewCaseReport()
 	{	$this->redirectLogin();
-		$this->load->helper(array('form', 'url'));
-		
-		$this->load->library('form_validation');
 		
 		/* css */
 		$data['base'] = $this->config->item('base_url');
@@ -158,10 +148,6 @@ class Crform extends CI_Controller
 			'TPsort-dd' => $this->input->post('TPsort-dd')
 			);
 		
-		$this->load->helper(array('form', 'url'));
-		
-		$this->load->library('form_validation');
-		
 		/* css */
 		$data['base'] = $this->config->item('base_url');
 		$data['css'] = $this->config->item('css');
@@ -193,10 +179,6 @@ class Crform extends CI_Controller
 	{	$this->redirectLogin();
 		$this->load->model('case_report');
 		
-		$this->load->library('form_validation');
-
-		$this->load->helper(array('form', 'url'));
-		
 		$data['patientno'] = $this->uri->segment(3,"");
 		
 		/* css */
@@ -226,12 +208,7 @@ class Crform extends CI_Controller
 	}
 	function update_patient()
 	{	$this->redirectLogin();
-		$this->load->model('case_report');
-		
-		$this->load->library('form_validation');
-
-		$this->load->helper(array('form', 'url'));
-		
+		$this->load->model('case_report');		
 		$data['patientno'] = $this->uri->segment(3,"");
 		
 		/* css */
@@ -261,7 +238,6 @@ class Crform extends CI_Controller
 	}
 	function update_patient_info()
 	{
-		$this->load->helper(array('form', 'url'));
 		$datedob = explode ('/', $this->input->post('TPbirthdate-txt'));
 		$dateconsul = explode ('/', $this->input->post('TPconsuldate-txt'));
 		$dateill = explode ('/', $this->input->post('TPillnessdate-txt'));
@@ -291,10 +267,6 @@ class Crform extends CI_Controller
 	}
 	function testchart()
 	{
-		
-		$this->load->helper(array('form', 'url'));
-		
-		$this->load->library('form_validation');
 		$this->load->model('Case_report');
 		$data['year'] = '2012';
 	
@@ -486,3 +458,6 @@ class Crform extends CI_Controller
 	
 	}
 }
+
+/* End of file user/crform.php */
+/* Location: ./application/controllers/user/crform.php */

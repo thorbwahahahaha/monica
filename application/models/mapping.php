@@ -1,7 +1,6 @@
 <?php 
-	
-	class Mapping extends CI_Model
-	{
+class Mapping extends CI_Model
+{
 		function __construct()
 		{
 			parent::__construct();
@@ -344,7 +343,8 @@
 				$q->free_result();
 				return 0;
 			}
-			//*/
 		}
-	}
-?>
+}
+
+/* End of mapping.php */
+/* Location: ./application/models/mapping.php */

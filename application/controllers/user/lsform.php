@@ -2,10 +2,8 @@
 class Lsform extends CI_Controller
 {
 	public function index()
-	{	$this->redirectLogin();
-		$this->load->helper(array('form', 'url'));
-		
-		$this->load->library('form_validation');
+	{	
+		$this->redirectLogin();
 		
 		/* css */
 		$data['base'] = $this->config->item('base_url');
@@ -26,18 +24,13 @@ class Lsform extends CI_Controller
 		}
 	}
 	function redirectLogin()
-	{	$this->load->library('session');
-		$this->load->helper(array('form', 'url'));
+	{
 		if($this->session->userdata('logged_in') != TRUE )
 		redirect(substr(base_url(), 0, -1) . '/index.php/login');
 		
 	}
 	function addls()
-	{	
-		$this->load->helper(array('form', 'url'));
-		
-		$this->load->library('form_validation');
-		
+	{		
 		/* css */
 		$data['base'] = $this->config->item('base_url');
 		$data['css'] = $this->config->item('css');
@@ -85,3 +78,6 @@ class Lsform extends CI_Controller
 		}
 	}
 }
+
+/* End of file user/lsform.php */
+/* Location: ./application/controllers/user/lsform.php */

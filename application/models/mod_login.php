@@ -1,7 +1,6 @@
 <?php 
-	
-	class Mod_login extends CI_Model
-	{
+class Mod_login extends CI_Model
+{
 		function __construct()
 		{
 			parent::__construct();
@@ -46,17 +45,18 @@
 			$qString = 'CALL '; 
 			$qString .= "add_user ('"; // name of stored procedure
 			$qString .= 
-			//variables needed by the stored procedure
-			$data['TPusername-txt'] . "','" . 
-			$data['TPpassword-txt'] . "','" .
-			$data['TPfirstname-txt'] . "','" .
-			$data['TPmiddlename-txt'] . "','" .
-			$data['TPlastname-txt'] . "','" .
-			$data['TPtype-dd'] . "'," .
-			"'n'" . ")";
+				//variables needed by the stored procedure
+				$data['TPusername-txt'] . "','" . 
+				$data['TPpassword-txt'] . "','" .
+				$data['TPfirstname-txt'] . "','" .
+				$data['TPmiddlename-txt'] . "','" .
+				$data['TPlastname-txt'] . "','" .
+				$data['TPtype-dd'] . "'," . "'n'" . ")";
 			
 			
 			$query = $this->db->query($qString);
 		}
-	}
-?>
+}
+
+/* End of mod_login.php */
+/* Location: ./application/models/mod_login.php */

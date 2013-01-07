@@ -35,5 +35,5 @@ class Mobile extends CI_Controller {
 	
 }
 
-/* End of file relink.php */
-/* Location: ./application/controllers/relink.php */
+/* End of file mobile.php */
+/* Location: ./application/controllers/mobile.php */
